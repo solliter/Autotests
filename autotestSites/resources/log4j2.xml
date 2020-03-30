@@ -1,0 +1,23 @@
+<Configuration>
+<Appenders>
+<Console name="Console">
+<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %highlight{%-5level}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=magenta} %M - %msg%n"/>
+</Console>
+<RollingFile name="MyFile" filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz" append="true" immediateFlush="true">
+<PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %M - %msg%n"/>
+<Policies>
+<SizeBasedTriggeringPolicy size="5 MB"/>
+</Policies>
+<DirectWriteRolloverStrategy maxFiles="10"/>
+</RollingFile>
+<File name="ErrorFile" append="true" immediateFlush="true" fileName="log/errors.log">
+<PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %M - %msg%n"/>
+</File>
+</Appenders>
+<Loggers>
+<Root level="info">
+<AppenderRef ref="Console"/>
+<AppenderRef ref="MyFile"/>
+</Root>
+</Loggers>
+</Configuration>
