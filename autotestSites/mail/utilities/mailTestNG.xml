@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+<test name="Regestration test">
+		<classes>
+			<class name="main.MailRegistrationTestUnitPositive" />
+			<class name="main.MailRegistrationTestUnitNegative" />
+		</classes>
+</test>
+</suite>
