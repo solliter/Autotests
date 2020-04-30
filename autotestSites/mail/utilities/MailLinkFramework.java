@@ -3,6 +3,8 @@ package utilities;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,9 +14,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
+
 public class MailLinkFramework {
 	WebDriver driver;
-	
+	private static final Logger log = LogManager.getLogger(MailLinkFramework.class.getName());
 	
 	//link Factory
 	
@@ -60,6 +63,7 @@ public class MailLinkFramework {
 	public MailLinkFramework(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+
 	}
 	
 	//Click/send keys Factory
@@ -70,10 +74,12 @@ public class MailLinkFramework {
 	
 	public void fillFirstName(String firstName) {
 		firstNameLink.sendKeys(firstName);
+		log.info("Filling first name");
 	}
 	
 	public void fillLastName(String lastName) {
 		lastNameLink.sendKeys(lastName);
+		log.info("Filling last name");
 	}
 	
 	public void fillDateDay() {
@@ -102,22 +108,27 @@ public class MailLinkFramework {
 	
 	public void fillMailName(String mailName) {
 		mailNameLink.sendKeys(mailName);
+		log.info("Filling mail name");
 	}
 	
 	public void fillMailPassword(String mailPassword) {
 		mailPasswordLink.sendKeys(mailPassword);
+		log.info("Filling mail password");
 	}
 	
 	public void fillMailPassword2(String repeatMailPassword) {
 		mailPassword2Link.sendKeys(repeatMailPassword);
+		log.info("Reapeat mail password");
 	}
 	
 	public void fillMailPhone(String mailPhone) {
 		mailPhoneLink.sendKeys(mailPhone);;
+		log.info("Filling mail phone number");
 	}
 	
 	public void clickMailSubmit() {
 		mailSubmitLink.click();
+		log.info("Submit test");
 	}
 	
 	public void dateMail(String dateBirth) {
@@ -142,6 +153,7 @@ public class MailLinkFramework {
 		fillDateYear();
 		WebElement yearMail = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//*[@data-test-id='select-value:20" + year + "']"))));
 		yearMail.click();
+		log.info("Filling date birth");
 		
 
 	}
@@ -152,7 +164,7 @@ public class MailLinkFramework {
 		for(WebElement error: errors) {
 			++i;
 			if ( i > 0) {
-				System.out.println("Ошибка, " + error.getText());
+				log.warn("Ошибка, " + error.getText());
 			}
 			}
 	}
@@ -163,7 +175,7 @@ public class MailLinkFramework {
 		for(WebElement error: errors) {
 			++i;
 			if ( i > 1) {
-				System.out.println("Ошибка, " + error.getText());
+				log.warn("Ошибка, " + error.getText());
 			}
 			}
 	}
@@ -174,5 +186,6 @@ public class MailLinkFramework {
 		} else if (gender.equals("woman")) {
 			clickWomanRadio();
 		}
+		log.info("Choosing gender");
 	}
 }
