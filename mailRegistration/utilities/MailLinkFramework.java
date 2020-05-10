@@ -84,17 +84,17 @@ public class MailLinkFramework {
 	
 	public void fillDateDay() {
 		dateDayLink.click();
-//		dateDayLink.sendKeys(UserDateDay);
+
 	}
 	
 	public void fillDateMonth() {
 		dateMonthLink.click();
-//		sendKeys(UserDateMont);
+
 	}
 	
 	public void fillDateYear() {
 		dateYearLink.click();
-//		dateYearLink.sendKeys(UserDateYear);
+
 	}
 	
 	

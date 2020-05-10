@@ -54,20 +54,7 @@ public class homePageTestUnit {
 		    }
 		}
 		
-//		String textToSelect2 = "Моск";
-//		searchPage.setDestination("Моск");
-//		List<WebElement> dropDown2 = driver.findElements(By.xpath("//input[@id='destination']/div[@class = 'autocomplete__dropdown']/*"));
-//		for(WebElement option : dropDown2){
-//		    System.out.println(option);
-//		    if(option.getText().contains(textToSelect2)) {
-//		        System.out.println("Trying to select: "+textToSelect2);
-//		        option.click();
-//		        break;
-//		    }
-//		}
-		
-//		searchPage.setdateStart();
-//		searchPage.setdateStart();
+
 	}
 
 	

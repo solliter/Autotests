@@ -74,42 +74,7 @@ public class sberBank {
 
 		js.executeScript("window.scrollBy(0, 300);");
 		Thread.sleep(2000);
-//
-//		WebElement switch1 = driver
-//				.findElement(By.xpath("//div[@class='dcCalc_frame__discounts']//div[1]//div[2]//label[1]//span[1]"));
-//		if (switch1.isSelected()) {
-//		} else {
-//			switch1.click();
-//
-//		}
-//		
-//		WebElement switch2 = driver
-//				.findElement(By.xpath("//div[@class='dcCalc_frame__discounts']//div[2]//div[2]//label[1]"));
-//		if (switch2.isSelected()) {
-//		} else {
-//			switch2.click();
-//
-//		}
-//		
-//		WebElement switch3 = driver
-//				.findElement(By.xpath("//div[@class='dcCalc_frame__discounts']//div[3]//div[2]//label[1]"));
-//		if (switch3.isSelected()) {
-//		} else {
-//			switch3.click();
-//
-//		}
-//		
-//		WebElement switch4 = driver
-//				.findElement(By.xpath("//div[@class='dcCalc_frame__discounts']//div[4]//div[2]//label[1]"));
-//		if (switch4.isSelected()) {
-//		} else {
-//			switch4.click();
-//
-//		}
-//		
-//		WebElement resultEnd = driver.findElement(By.xpath("//span[@data-test-id = 'monthlyPayment']"));
-//		String resultNumber = resultEnd.getText();
-//		System.out.println(resultNumber);
+
 
 		
 		
@@ -120,19 +85,7 @@ public class sberBank {
 				 switchOnly.click();
 				 Thread.sleep(1000); } 
 		
-		 
-//		 Thread.sleep(2000);
-//		 List<WebElement> switchList = driver.findElements(By.xpath("//span[contains(@class,\"dcCalc_switch__control\")]/.."));
-//		 while (!switchList.isEmpty()) {
-//		     WebElement switchOnly = switchList.remove(0);
-//		     if (!switchOnly.getAttribute("class").contains("checked"))
-//		     {
-//		         switchOnly.click();
-//		         switchList = driver.findElements(By.xpath("//span[contains(@class,\"dcCalc_switch__control\")]/.."));
-//		         Thread.sleep(1000);
-//		     }
-//		 }
-//		 Thread.sleep(5000);
+
 	
 	
 		WebElement mounthlyPayment = driver.findElement(By.xpath("//div[@class = 'dcCalc_calcResult_layout']//span[@data-test-id = 'monthlyPayment']"));
